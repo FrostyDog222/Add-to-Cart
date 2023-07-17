@@ -25,10 +25,12 @@ inputFieldEl.addEventListener("input", function () {
 
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
+  if(inputValue){
+    push(shoppingListInDB, inputValue);
+  
+    clearInputFieldEl();
+  }
 
-  push(shoppingListInDB, inputValue);
-
-  clearInputFieldEl();
 });
 
 onValue(shoppingListInDB, function (snapshot) {
